@@ -43,7 +43,7 @@ public class ScheduledTask {
             String url=host.getUrl();
             serverList.forEach(server -> { //todo: add multithreading
                 HttpGet request = new HttpGet(url);
-                HttpResponse response = client.execute(request);
+              //  HttpResponse response = client.execute(request);
             });
         });
 
