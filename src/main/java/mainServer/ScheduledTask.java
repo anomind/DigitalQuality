@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import mainServer.entities.*;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
@@ -36,15 +37,22 @@ public class ScheduledTask {
 
 
     @Scheduled(fixedRate = 86400000) //a day
-    public void askTask() throws IOException {
+    public void askTask() {
         ArrayList<Server> serverList = (ArrayList<Server>) serverRepository.findAll();
         ArrayList<Host> hostList = (ArrayList<Host>) hostRepository.findAll();
         hostList.forEach(host -> {
             String url=host.getUrl();
-            serverList.forEach(server -> { //todo: add multithreading
-                HttpGet request = new HttpGet(url);
+            HttpGet request = new HttpGet(url);
+            try {
+                HttpResponse response = client.execute(request);
+                log.info(String.valueOf(response.getStatusLine().getStatusCode()));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            //serverList.forEach(server -> { //todo: add multithreading
+             //   HttpGet request = new HttpGet(url);
               //  HttpResponse response = client.execute(request);
-            });
+            //});
         });
 
 

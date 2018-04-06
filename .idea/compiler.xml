@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DigitalQuality" />
         <module name="DQMainServer" />
         <module name="mainServer" />
         <module name="testServer" />
+        <module name="testServer (1)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +17,7 @@
       <module name="DQMainServer" target="1.8" />
       <module name="mainServer" target="1.9" />
       <module name="testServer" target="1.9" />
+      <module name="testServer (1)" target="1.9" />
     </bytecodeTargetLevel>
   </component>
 </project>
