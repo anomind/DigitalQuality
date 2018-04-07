@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DigitalQuality.iml" filepath="$PROJECT_DIR$/DigitalQuality.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mainServer/testServer.iml" filepath="$PROJECT_DIR$/mainServer/testServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mainServer/mainServer.iml" filepath="$PROJECT_DIR$/mainServer/mainServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testServer/testServer.iml" filepath="$PROJECT_DIR$/testServer/testServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/testServer/testServer (1).iml" filepath="$PROJECT_DIR$/testServer/testServer (1).iml" />
     </modules>
   </component>

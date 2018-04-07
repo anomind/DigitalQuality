@@ -23,8 +23,7 @@ public class Check {
     private Long fullPageSize;
     private Long fullPageLoadSpeed;
 
-    public Check (Integer id, Host host, Server server, Long headRequestTime, Long fullPageLoadTime, Long fullPageLoadSize) {
-        this.id=id;
+    public Check (Host host, Server server, Long headRequestTime, Long fullPageLoadTime, Long fullPageLoadSize) {
         this.host=host;
         this.server=server;
         this.headRequestTime=headRequestTime;
@@ -32,6 +31,14 @@ public class Check {
         this.fullPageSize=fullPageLoadSize;
         this.fullPageLoadSpeed=fullPageLoadSize/fullPageLoadTime;
         this.checkTime=new Timestamp(System.currentTimeMillis());
+    }
+    public Check (Long headRequestTime, Long fullPageLoadTime, Long fullPageLoadSize, Integer statusCode) {
+        this.headRequestTime=headRequestTime;
+        this.fullPageLoadTime=fullPageLoadTime;
+        this.fullPageSize=fullPageLoadSize;
+        this.fullPageLoadSpeed=fullPageLoadSize/fullPageLoadTime;
+        this.checkTime=new Timestamp(System.currentTimeMillis());
+        this.statusCode=statusCode;
     }
 
     public Integer getId() {
